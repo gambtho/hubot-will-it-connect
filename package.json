@@ -1,7 +1,7 @@
 {
   "name": "hubot-will-it-connect",
   "description": "Connects hubot with willitconnect, to validate CF's ability to connect to external resources",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "gambtho <thomas_gamble@homedepot.com>",
   "license": "Apache-2.0",
   "keywords": "hubot, hubot-scripts, willitconnect, cloud foundry, pcf",

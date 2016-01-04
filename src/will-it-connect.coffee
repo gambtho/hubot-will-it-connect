@@ -27,7 +27,7 @@ module.exports = (robot) ->
       title: "willItConnect: #{host}:#{port}"
       title_link: res.match[1]
     query host, port, (response, color, err) ->
-      if err
+      if err or not host or not port
         payload.pretext = "Please use this format: willitconnect <url:port>"
         payload.text = "Willitconnect error - #{err}"
         payload.color ="danger"
