@@ -21,3 +21,7 @@ Then add **hubot-will-it-connect** to your `external-scripts.json`:
 ## Sample Interaction
 
 ![Example Image](./example.png)
+
+## More Information
+
+[Learn more about willitconnect](https://github.com/krujos/willitconnect)
