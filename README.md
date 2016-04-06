@@ -1,5 +1,7 @@
 # hubot-will-it-connect
 
+[![wercker status](https://app.wercker.com/status/f9778be63b53ef447f578b62972b3c0a/m "wercker status")](https://app.wercker.com/project/bykey/f9778be63b53ef447f578b62972b3c0a)
+
 Connects hubot with willitconnect, to validate CF's ability to connect to external resources
 
 See [`src/will-it-connect.coffee`](src/will-it-connect.coffee) for full documentation.
