@@ -39,19 +39,17 @@ module.exports = (robot) ->
         content: payload
 
   query = (host, port, cb) ->
-    robot.http("#{WIC_PATH}/willitconnect?host=#{host}&port=#{port}")
-    .get() (err, resp, body) ->
-      if (err or not resp.statusCode == 200)
+    data = JSON.stringify({
+      target: "#{host}:#{port}"
+    })
+    robot.http("#{WIC_PATH}/v2/willitconnect")
+    .header('Content-Type', 'application/json')
+    .post(data) (err, resp, body) ->
+      if (err or resp.statusCode != 200)
         err = "I am unable to connect to willItConnect - #{err}"
-        cb(null, null, err)
+        cb(null, "danger", err)
       else
-        if(body.match(/I can connect to (.*)/))
-          cb(body, "good", err)
+        if(JSON.parse(body).canConnect)
+          cb("I can connect", "good", null)
         else
-          cb(body, "warning", err)
-
-
-
-
-
-
+          cb("I cannot connect", "warning", null)
